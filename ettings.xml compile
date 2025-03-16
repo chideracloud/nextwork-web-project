@@ -1,0 +1,206 @@
+LOGIN()                                                                LOGIN()
+
+
+
+[1mNAME[0m
+       login -
+
+[1mDESCRIPTION[0m
+       Sets  up  the  idiomatic  tool  for  your  package  format  to use your
+       CodeArtifact repository. Your login information is valid for up  to  12
+       hours after which you must login again.
+
+[1mSYNOPSIS[0m
+            login
+          --tool <value>
+          --domain <value>
+          [--domain-owner <value>]
+          [--namespace <value>]
+          [--duration-seconds <value>]
+          --repository <value>
+          [--endpoint-type <value>]
+          [--dry-run]
+          [--debug]
+          [--endpoint-url <value>]
+          [--no-verify-ssl]
+          [--no-paginate]
+          [--output <value>]
+          [--query <value>]
+          [--profile <value>]
+          [--region <value>]
+          [--version <value>]
+          [--color <value>]
+          [--no-sign-request]
+          [--ca-bundle <value>]
+          [--cli-read-timeout <value>]
+          [--cli-connect-timeout <value>]
+          [--cli-binary-format <value>]
+          [--no-cli-pager]
+          [--cli-auto-prompt]
+          [--no-cli-auto-prompt]
+
+[1mOPTIONS[0m
+       [1m--tool [22m(string) The tool you want to connect with your repository
+
+       [1m--domain [22m(string) Your CodeArtifact domain name
+
+       [1m--domain-owner  [22m(string) The AWS account ID that owns your CodeArtifact
+       domain
+
+       [1m--namespace [22m(string) Associates a namespace with your repository tool
+
+       [1m--duration-seconds [22m(integer) The time, in seconds, that the  login  in-
+       formation is valid
+
+       [1m--repository [22m(string) Your CodeArtifact repository name
+
+       [1m--endpoint-type  [22m(string) The type of endpoint you want the tool to in-
+       teract with
+
+       [1m--dry-run [22m(boolean) Only print the commands that would be  executed  to
+       connect  your  tool  with your repository without making any changes to
+       your configuration. Note that this prints the unredacted auth token  as
+       part of the output
+
+[1mGLOBAL OPTIONS[0m
+       [1m--debug [22m(boolean)
+
+       Turn on debug logging.
+
+       [1m--endpoint-url [22m(string)
+
+       Override command's default URL with the given URL.
+
+       [1m--no-verify-ssl [22m(boolean)
+
+       By  default, the AWS CLI uses SSL when communicating with AWS services.
+       For each SSL connection, the AWS CLI will verify SSL certificates. This
+       option overrides the default behavior of verifying SSL certificates.
+
+       [1m--no-paginate [22m(boolean)
+
+       Disable automatic pagination. If automatic pagination is disabled,  the
+       AWS CLI will only make one call, for the first page of results.
+
+       [1m--output [22m(string)
+
+       The formatting style for command output.
+
+       +o json
+
+       +o text
+
+       +o table
+
+       +o yaml
+
+       +o yaml-stream
+
+       [1m--query [22m(string)
+
+       A JMESPath query to use in filtering the response data.
+
+       [1m--profile [22m(string)
+
+       Use a specific profile from your credential file.
+
+       [1m--region [22m(string)
+
+       The region to use. Overrides config/env settings.
+
+       [1m--version [22m(string)
+
+       Display the version of this tool.
+
+       [1m--color [22m(string)
+
+       Turn on/off color output.
+
+       +o on
+
+       +o off
+
+       +o auto
+
+       [1m--no-sign-request [22m(boolean)
+
+       Do  not  sign requests. Credentials will not be loaded if this argument
+       is provided.
+
+       [1m--ca-bundle [22m(string)
+
+       The CA certificate bundle to use when verifying SSL certificates. Over-
+       rides config/env settings.
+
+       [1m--cli-read-timeout [22m(int)
+
+       The maximum socket read time in seconds. If the value is set to 0,  the
+       socket  read  will be blocking and not timeout. The default value is 60
+       seconds.
+
+       [1m--cli-connect-timeout [22m(int)
+
+       The maximum socket connect time in seconds. If the value is set  to  0,
+       the  socket connect will be blocking and not timeout. The default value
+       is 60 seconds.
+
+       [1m--cli-binary-format [22m(string)
+
+       The formatting style to be used for binary blobs. The default format is
+       base64. The base64 format expects binary blobs  to  be  provided  as  a
+       base64  encoded string. The raw-in-base64-out format preserves compati-
+       bility with AWS CLI V1 behavior and binary values must be passed liter-
+       ally. When providing contents from a file that map  to  a  binary  blob
+       [1mfileb:// [22mwill always be treated as binary and use the file contents di-
+       rectly  regardless of the [1mcli-binary-format [22msetting. When using [1mfile://[0m
+       the file contents will need to properly formatted  for  the  configured
+       [1mcli-binary-format[22m.
+
+       +o base64
+
+       +o raw-in-base64-out
+
+       [1m--no-cli-pager [22m(boolean)
+
+       Disable cli pager for output.
+
+       [1m--cli-auto-prompt [22m(boolean)
+
+       Automatically prompt for CLI input parameters.
+
+       [1m--no-cli-auto-prompt [22m(boolean)
+
+       Disable automatically prompt for CLI input parameters.
+
+[1mEXAMPLES[0m
+       [1mNOTE:[0m
+          To  use  the following examples, you must have the AWS CLI installed
+          and configured. See the [4mGetting[24m [4mstarted[24m [4mguide[24m in the  [4mAWS[24m  [4mCLI[24m  [4mUser[0m
+          [4mGuide[24m for more information.
+
+          Unless  otherwise  stated,  all  examples  have  unix-like quotation
+          rules. These examples will need to be  adapted  to  your  terminal's
+          quoting rules. See [4mUsing[24m [4mquotation[24m [4mmarks[24m [4mwith[24m [4mstrings[24m in the [4mAWS[24m [4mCLI[0m
+          [4mUser[24m [4mGuide[24m .
+
+       [1mTo configure authentication to your repository with the login command[0m
+
+       The  following  [1mlogin [22mexample configures the npm package manager with a
+       repository named test-repo in a domain named test-domain.
+
+          aws codeartifact login \
+              --domain test-domain \
+              --repository test-repo \
+              --tool npm
+
+       Output:
+
+          Successfully configured npm to use AWS CodeArtifact repository https://test-domain-111122223333.d.codeartifact.us-west-2.amazonaws.com/npm/test-repo/
+          Login expires in 12 hours at 2020-11-12 01:53:16-05:00
+
+       For more information, see [4mGetting[24m [4mstarted[24m [4mwith[24m [4mthe[24m [4mAWS[24m [4mCLI[24m in  the  [4mAWS[0m
+       [4mCodeArtifact[24m [4mUser[24m [4mGuide[24m.
+
+
+
+                                                                       LOGIN()
