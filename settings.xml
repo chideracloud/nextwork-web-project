@@ -1,18 +1,41 @@
-<settings>
-  <servers>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
     <servers>
-      <id>aws-codeartifact</id>
-      <username>aws</username>
-      <password>${env.CODEARTIFACT_AUTH_TOKEN}</password>
-    </server>
-  </servers>
-  <mirrors>
-    <mirror>
-      <id>aws-codeartifact</id>
-      <mirrorOf>*</mirrorOf>
-      <url>https://nextwork-975049907833.d.codeartifact.us-east-1.amazonaws.com/maven/nextwork-devops-cicd/</url>
-      <layout>default</layout>
-    </mirror>
-  </mirrors>
+        <server>
+            <id>aws-codeartifact</id>
+            <username>aws</username>
+            <password>${env.CODEAeyJ2ZXIiOjEsImlzdSI6MTc0MjE3MzUyNCwiZW5jIjoiQTEyOEdDTSIsInRhZyI6IlZ0dk90dFNtWEdyQ1pvY091LVhxUmciLCJleHAiOjE3NDIyMTY3MjQsImFsZyI6IkExMjhHQ01LVyIsIml2IjoiekFhMGs5WjM1NVVYLW42ViJ9.oBY3ZTlxuVJJPABjeiLUPg.YZ-yob-xvJcvbL-O.acsc2P0Y16-oEI1hoGwNYeCHQrlqgUjhmbJDzP9xZDCPOp9XjYIxnAvi-7MEbrGacZniYbbaKsvB5rOxXP5UXGnk1r7YzMoABPl-MZqI80EscwaNGXlwSQL9jyRJ6F6JAqW5aTLwpWzJVCJ8mubGheeS8XMZcwXxG-2nV5afqFqjjXwFCQHGgCn5UyGl-wc3tK9k6f57WxpL9zlJ517EQquWRP21FXgev66j8IG25ntP_5cgECltvb4_ZgQF0EK8RZdaainizXuW_QHSorZeyl5THAfMOy8cT4IYcPhsEAmmme8V3xp0c52GmyAKOkelVxTwSh3wh4msZEZI4hbj9UmYtzVVmPM4Uw5emeFU3PatXaHW3cTdPPRYCXxa8EKtq5hh4uQdzDkwBEMnYpxKNQJO-R0YWYBuSKY3MlZZTK1m4mazLHHzeFXnycmrXbLiTpMqUdUELn0VJU0GPgpxUI2FSzjFVBuX8tvfgzvEmD554-AP84x6LDBd_-h4_17c8cgOtBPLvBUG70-37sEBgNgkjfSmHnmX9TG6K3klg6_qT0PJDgBOxLNkdaxxpgWfteHpL5HdHzUVoSOr7qQ-Mnf_3cQT5Hdinpvgx3QI3cLQEOuIu1eTLxw8ecBggeQ3M2DoskVXTHK8J57Zl1BC5FcxXd_xSZcMHOgU6wpNs8PTy54wc9_bfF6P7KP4My06SHqKvZ2Gxi7PV6E4w3Mmg3FdmwUfOoPAso_KRKCClNNHZzl0x_clqRoQ1XmTlspz1FtPiogkyzlOJUYl6lbcya7FJ1Ax-fW17BU5c1q18yroMut62sxsjIsH6SKzcarsq8iotcHTWiFL8m_KuUIsTK47Fb6lDx_sArF5EEUBzSNa4h3scI8KkxOK4yA7lppSOheuNR9YrhnG2pIW5EdUXcNAEjax_DrBgg1PXx7cdJayllgX1y11G8dBqhrPYWLUbTKl6lXCs8er_DJUD_3bd0rfHErXVUGZNogfNrtIhC_org.dLk3cspfsZWHVdMBRUEqzARTIFACT_AUTH_TOKEN}</password>
+        </server>
+    </servers>
 
+    <mirrors>
+        <mirror>
+            <id>aws-codeartifact-mirror</id>
+            <mirrorOf>*</mirrorOf>
+            <url>https://nextwork-975049907833.d.codeartifact.us-east-1.amazonaws.com/maven/nextwork-devops-cicd/</url>
+        </mirror>
+    </mirrors>
+
+    <profiles>
+        <profile>
+            <id>aws-codeartifact</id>
+            <repositories>
+                <repository>
+                    <id>aws-codeartifact</id>
+                    <url>https://nextwork-975049907833.d.codeartifact.us-east-1.amazonaws.com/maven/nextwork-devops-cicd/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+        </profile>
+    </profiles>
+
+    <activeProfiles>
+        <activeProfile>aws-codeartifact</activeProfile>
+    </activeProfiles>
 </settings>
